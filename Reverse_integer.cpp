@@ -17,3 +17,24 @@ public:
         return z;   
     }
 };
+
+
+// M-2
+
+class Solution {
+public:
+    int reverse(int x) {
+        int r =0;
+        while(x!=0){
+            if(r>INT_MAX/10 || r<INT_MIN/10){ // here its very important to also do INT_MIN,MAX/10 because it makes sure to not overflow before the updation of r 
+                return 0;
+            }
+            r= r*10+ x%10; // it also covers the negative cases
+            x/=10;
+        }
+        return r;
+        }
+};
+
+//-5277 /10 = -527 /10 = -52/10 = -5/10,,, -527%10= -7 
+// 
