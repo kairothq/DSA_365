@@ -7,7 +7,7 @@ public:
             if(nums[mid]== target)
                 return mid;
             if(nums[low]<=nums[mid]){ // this is the case of unique elements // this means left is sorted
-                if(target<=nums[mid]&&target>=nums[low]){
+                if(target<=nums[mid]&&target>=nums[low]){ // checking if the element is left half or not 
                     high=mid-1;
                 }
                 else{
