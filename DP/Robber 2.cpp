@@ -18,7 +18,7 @@ public:
 long long rob(vector<int>& valueInHouse) {
         vector<int> temp1, temp2;
          int n= valueInHouse.size();
-         if(n==1) return valueInHouse[0]; // i.e when there's only one element
+         if(n==1) return valueInHouse[0]; // i.e when there's only one element // edge case
          for(int i=0; i<n; i++){
             if(i!=0) temp1.push_back(valueInHouse[i]);
             if(i!=n-1) temp2.push_back(valueInHouse[i]); // make 2 array, one where only last element is excluded and apply the robber logic on left part
