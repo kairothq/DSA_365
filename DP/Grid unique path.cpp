@@ -27,13 +27,15 @@ public:
         int dp[m][n];
         for(int i=0; i<m;i++){
             for(int j=0; j<n;j++){
-                if(i==0 & j==0) dp[i][j]=1;
+                if(i==0 & j==0) dp[i][j]=1; // since there is only one way to reach 0,0
                 else{
-                    int up=0;
-                    int left=0;
-                    if(i>0) up= dp[i-1][j];
-                    if(j>0) left = dp[i][j-1];
-                    dp[i][j]= up+left;
+                    int up=0; // this is making sure that if it is in the top row or maybe in the left most row i.e. these cell don't have a way from where the element comes from therefore we need to check that element is not here since then it will don't have any up or left
+                    int left=0; // Also reseting it in every iteration won't cause any problem since we need to store up, left new for each iteratoin
+                    if(i>0) up= dp[i-1][j]; // // this is making sure that if it is in the top row or
+                    // maybe in the left most row i.e. these cell don't have a way from where the element comes 
+                    // from therefore we need to check that element is not here since then it will don't have any up or left
+                    if(j>0) left = dp[i][j-1]; // And what this up or left store is no of ways to reach upto the upper cell or left cell
+                    dp[i][j]= up+left; // this store the no of ways to reach this cell since it can only come from left or up cell to this 
                 }
             }
         }
