@@ -47,7 +47,7 @@ public:
  int minimumTotal(vector<vector<int>>& triangle) {
     int n= triangle.size();
     vector<vector<int>>dp(n, vector<int>(n,0));
-    for(int j=0; j<n; j++) dp[n-1][j]=triangle[n-1][j];// defining all base cases, starting from bottom
+    for(int j=0; j<n; j++) dp[n-1][j]=triangle[n-1][j];// defining all base cases, starting from bottom // this step is different from all ques of tabulation
     
     for(int i= n-2; i>=0;i--) { // already defined the n-1, therefore start with top but i can go till n-2 then
         for(int j=i; j>=0; j--){ // this is defining all the possible values of parameters, since in every row, columnn can max be equal to no of rows
